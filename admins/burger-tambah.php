@@ -1,21 +1,20 @@
 <?php 
     require_once '../admin/header.php';
-    require_once '../functions/functions.php';
+    require_once 'classBurger.php';
 
-    $kategori = query("SELECT * FROM kategori");
-    $binatang = query("SELECT * FROM binatang");
-
-
-
+    $result = new Burger;
+    $data = $result->readTwoTable();
 
 
 
 //check whether the button has been click or not
 if(isset($_POST['submit'])){
+    $add = new Burger;
 
+    $result =$add->addBurger($_POST);
     
     //check the progress
-    if (tambahBinatang($_POST)>0){
+    if ($result){
         echo "
             <script>
             alert('data berhasil ditambah');
@@ -44,7 +43,7 @@ if(isset($_POST['submit'])){
     <div class="mb-3">
         <select class="form-select" name="id_kategori" required>
             <option value=""> --Choose Burger Category--</option>
-            <?php foreach ($kategori as $jns) : ?>
+            <?php foreach ($data["tableKat"] as $jns) : ?>
                 <option value="<?= $jns['id_kategori'] ?>"><?= $jns['nama_kategori'] ?> </option>
             <?php endforeach; ?>
         </select>

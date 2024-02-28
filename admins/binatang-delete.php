@@ -1,9 +1,11 @@
 <?php
 
-require_once '../functions/functions.php';
+require_once 'classBurger.php';
+
+$burger = new Burger;
 $id_binatang = $_GET['id_binatang'];
 
-if (hapusBinatang($id_binatang)>0){
+if ($burger->deleteBurger($id_binatang)){
     echo "<script>
             alert('data berhasil dihapus');
             document.location.href = 'burger.php';

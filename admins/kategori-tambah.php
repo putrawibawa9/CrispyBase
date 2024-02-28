@@ -1,32 +1,19 @@
 <?php 
     require_once '../admin/header.php';
-    require_once '../functions/functions.php';
+    require_once 'classCategory.php';
 
-    if(isset($_POST['submit'])){    
-        if (tambahKategori($_POST)>0){
-            echo "
-                <script>
-                alert('data berhasil ditambah');
-                document.location.href = 'kategori.php';
-                </script>
-            ";
-        }else{
-            echo " <script>
-            alert('data gagal ditambah');
-            document.location.href = 'kategori.php';
-            </script>
-        ";
-    
-        }
-    
-    }
+    if(isset($_POST['submit'])){
+        $nama_kategori = $_POST["nama_kategori"];
+        $addKategori = new Kategori;
+        $addKategori->addKategori($nama_kategori);
+}
 ?>
 
 <div class="container">
   <div class="row">
     <div class="col-12 p-3 bg-white">
         <h3>Burger Category</h3>
-        <form method="post">  
+        <form action="" method="post">  
             <div class="mb-3">
                 <input type="text" name="nama_kategori" placeholder=" Add Burger Category" class="form-control" required>
             </div>

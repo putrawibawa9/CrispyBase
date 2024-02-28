@@ -1,9 +1,12 @@
  <?php
 include_once "header.php";
 
-include_once "../functions/functions.php";
+require_once "../admins/classBurger.php";
 
-$binatang = query("SELECT * FROM binatang JOIN kategori ON binatang.id_kategori = kategori.id_kategori");
+$burger = new Burger;
+
+$binatang = $burger->readBurger();
+
 
 
 

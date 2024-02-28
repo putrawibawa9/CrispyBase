@@ -1,10 +1,13 @@
 <?php
-require_once '../functions/functions.php'; 
+require_once 'classCategory.php'; 
 require_once '../admin/header.php'; 
 
-$kategori = query("SELECT * FROM kategori");
+
+$kategori = new Kategori;
 
 
+
+$hasil = $kategori->readKategori();
 
 ?>
 
@@ -27,7 +30,7 @@ $kategori = query("SELECT * FROM kategori");
                   </tr>
             </thead>
             <tbody>
-              <?php foreach($kategori as $row):?>
+              <?php foreach($hasil as $row):?>
                 <tr>
                   <td ><?=$row['id_kategori']?></td>
                     <td ><?=$row['nama_kategori']?></td>

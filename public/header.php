@@ -1,7 +1,12 @@
 <?php
 
-require_once "../functions/functions.php";
-$kategori = query("SELECT * FROM kategori");
+require_once "../admins/classCategory.php";
+
+
+$kat = new Kategori;
+
+$kategori = $kat->readKategori();
+
 
 ?>
 

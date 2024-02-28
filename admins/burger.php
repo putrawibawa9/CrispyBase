@@ -1,16 +1,14 @@
 <?php
-require_once '../functions/functions.php'; 
+require_once 'classBurger.php'; 
 require_once '../admin/header.php'; 
 
-$binatang = query("SELECT * FROM binatang JOIN kategori ON binatang.id_kategori = kategori.id_kategori");
 
-
-
+$hasil = new Burger;
+$burger = $hasil->readBurger();
 ?>
 
 
-    
-    
+  
     
     <div class="container">
       <div class="row">
@@ -30,7 +28,7 @@ $binatang = query("SELECT * FROM binatang JOIN kategori ON binatang.id_kategori 
                   </tr>
             </thead>
             <tbody>
-              <?php foreach($binatang as $row):?>
+              <?php foreach($burger as $row):?>
                 <tr>
                   <td class="text-center" ><?=$row['id_binatang']?></td>
                   <td ><?=$row['nama_kategori']?></td>

@@ -1,14 +1,19 @@
 <?php
 include_once "header.php";
 
-include_once "../functions/functions.php";
+require_once "../admins/classBurger.php";
+require_once "../admins/classCategory.php";
 
 
-$kategori = $_GET['id_kategori'];
+$id_kategori = $_GET['id_kategori'];
 
-$binatang = query("SELECT * FROM binatang JOIN kategori ON binatang.id_kategori = kategori.id_kategori WHERE kategori.id_kategori = $kategori");
+$bntng = new Burger;
 
-$nama_kategori = query("SELECT nama_kategori FROM kategori WHERE id_kategori = $kategori")[0];
+$binatang = $bntng->readTwoTablepart3($id_kategori);
+
+
+
+
 
 ?>
       <div class="w-100 vh-100" id="home">
@@ -38,10 +43,10 @@ $nama_kategori = query("SELECT nama_kategori FROM kategori WHERE id_kategori = $
 
             <div class="row">
                 <div class="col-12 p-5">
-                <h1 class="display-4 mt-3 mb-5"> Category - <?= $nama_kategori['nama_kategori']?></h1>
+                <h1 class="display-4 mt-3 mb-5"> Category - <?= $binatang["tableKat"]["nama_kategori"]?></h1>
                 
                 <div class="row">
-                  <?php foreach($binatang as $row):?>
+                  <?php foreach($binatang["tableBin"] as $row):?>
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body text-center">

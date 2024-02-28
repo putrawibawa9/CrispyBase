@@ -1,41 +1,27 @@
 <?php 
     require_once '../admin/header.php';
-    require_once '../functions/functions.php'
-?>
+    require_once 'classCategory.php'; 
 
-<?php
 $id_kategori = $_GET['id_kategori'];
 
-$kategori = query("SELECT * FROM kategori WHERE id_kategori= $id_kategori")[0];
+$viewEachCategory = new Kategori;
+
+$kategori =$viewEachCategory->viewEachCategory($id_kategori);
+
 
 if(isset($_POST['submit'])){
-
-
-    
-    //check the progress
-    if (ubahKategori($_POST)>0){
-        echo "
-            <script>
-            alert('data berhasil diubah');
-            document.location.href = 'kategori.php';
-            </script>
-        ";
-    }else{
-        echo " <script>
-        alert('data gagal diubah');
-        document.location.href = 'kategori.php';
-        </script>
-    ";
-
-    }
-
+    $nama_kategori = $_POST["nama_kategori"];
+   $editKategori = new Kategori;
+   
+   $editKategori->editKategori($nama_kategori,$id_kategori);
+   
 }
 ?>
 <div class="container">
   <div class="row">
     <div class="col-12 p-3 bg-white">
         <h3>Edit Kategori Kopi</h3>
-        <form method="post">  
+        <form action="" method="post"`>  
         <input type="hidden" name="id_kategori" value="<?= $id_kategori ?>;">
                 
             <div class="mb-3">

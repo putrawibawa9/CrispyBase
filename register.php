@@ -1,21 +1,23 @@
 <?php
-if(isset($_POST['login'])){
-    include_once "construct.php";
-    include_once "auth.php";
-
-    $auth = new Auth;
 
 
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+include_once "auth.php";
 
-    $result = $auth->login($username, $password);
+
+if(isset($_POST['register'])){
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $register = new Auth;
+    if ($register->register($username, $password)) {
+        header("Location: index.php");
+        exit();
+    } else {
+        header("Location: register.php");
+        exit();
+    }
+
 }
-
-if (isset($_GET['error']) && $_GET['error'] == 1) {
-    $error = $_GET["error"];
-}
-
 
 ?>
 
@@ -24,7 +26,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
@@ -41,9 +43,6 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                     </div>
 
                     <div class="card-body">
-                    <?php if(isset($error)): ?>
-                <p style="color : red">Username / Password salah</p>
-                <?php endif; ?>
                          <form action="" method="post">
                             <div class="mb-3">
                                 <input type="text" name="username" placeholder="username" class="form-control">
@@ -54,11 +53,10 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                             </div> 
 
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" type="login" name="login">Login</button>
+                                    <button class="btn btn-primary" type="login" name="register">Register</button>
                                 </div>
                          </form>
-                        </div>
-                        <a href="register.php" class="btn btn-sm btn-primary">Register</a>
+                    </div>
                 </div> 
             </div>
         </div>

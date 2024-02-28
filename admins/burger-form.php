@@ -1,26 +1,26 @@
 <?php 
     require_once '../admin/header.php';
-    require_once '../functions/functions.php'
+    require_once 'classBurger.php';
+    require_once 'classCategory.php';
 ?>
 
 <?php
 $id_binatang = $_GET['id_binatang'];
 
-$binatang = query("SELECT * FROM binatang WHERE id_binatang= $id_binatang")[0];
 
+$data = new Burger;
+$semuakategori = new Kategori;
 
-$kategori = query("SELECT * FROM kategori JOIN binatang ON kategori.id_kategori = binatang.id_kategori WHERE id_binatang = $id_binatang")[0];
-
-
-$semua_kategori = query("SELECT * FROM kategori");
-
+$kategori = $semuakategori->readKategori();
+$result= $data->readTwoTablepart2($id_binatang);
 
 if(isset($_POST['submit'])){
 
-
+    $edit = new Burger;
+    $result = $edit->editBurger($_POST);
     
     //check the progress
-    if (ubahBinatang($_POST)>0){
+    if ($result){
         echo "
             <script>
             alert('data berhasil diubah');
@@ -37,6 +37,7 @@ if(isset($_POST['submit'])){
     }
 
 }
+
 ?>
 <div class="container">
   <div class="row">
@@ -47,12 +48,12 @@ if(isset($_POST['submit'])){
         <form method="post" enctype="multipart/form-data">
 
         <input type="hidden" name="id_binatang" value="<?= $id_binatang ?>;">
-        <input type="hidden" name="gambarLama" value="<?= $binatang['gambar']?>">
+        <input type="hidden" name="gambarLama" value="<?= $result['tableKat']['gambar']?>">
 
     <div class="mb-3">
         <select class="form-select" name="id_kategori" required>
-            <option value="<?= $kategori['id_kategori'] ?>"><?= $kategori['nama_kategori'] ?> </option>
-            <?php foreach ($semua_kategori as $ktg) : ?>
+            <option value="<?= $result['tableKat']['id_kategori'] ?>"><?= $result['tableKat']['nama_kategori'] ?> </option>
+            <?php foreach ($kategori as $ktg) : ?>
                 <option value="<?= $ktg['id_kategori'] ?>"><?= $ktg['nama_kategori'] ?> </option>
             <?php endforeach; ?>
         </select>
@@ -61,16 +62,16 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label class="form-label"> Burger Name</label>
-                <input type="text" name="nama_binatang" class="form-control" value="<?= $binatang['nama_binatang']?>">
+                <input type="text" name="nama_binatang" class="form-control" value="<?= $result['tableBin']['nama_binatang']?>">
             </div>
             
             
             <div class="mb-3">
                 <label class="form-label"> Burger Descriptions</label>
-            <textarea class="form-control" name="keterangan_binatang" rows="3" placeholder="Keterangan Binatang"  required><?= $binatang['keterangan_binatang']?></textarea>
+            <textarea class="form-control" name="keterangan_binatang" rows="3" placeholder="Keterangan Binatang"  required><?= $result['tableBin']['keterangan_binatang']?></textarea>
             </div>
 
-            <img src="../img/<?= $binatang['gambar'] ?>" width="100px" height="100px">
+            <img src="../img/<?= $result['tableBin']['gambar'] ?>" width="100px" height="100px">
 
             <div class="mb-3">
                 <label for="gambar" class="form-label"> Burger Picture</label>
