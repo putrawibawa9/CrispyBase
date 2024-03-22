@@ -1,6 +1,9 @@
 <?php
+
+use Connection\Connect;
+
 require_once "construct.php";
-class Auth extends Connect{
+class Auth extends Connection\Connect{
     public $error =false;
     public $row;
 

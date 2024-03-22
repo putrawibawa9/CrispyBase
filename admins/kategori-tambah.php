@@ -4,7 +4,7 @@
 
     if(isset($_POST['submit'])){
         $nama_kategori = $_POST["nama_kategori"];
-        $addKategori = new Kategori;
+        $addKategori = new Category\Kategori;
         $addKategori->addKategori($nama_kategori);
 }
 ?>

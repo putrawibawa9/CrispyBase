@@ -2,14 +2,14 @@
     require_once '../admin/header.php';
     require_once 'classProduk.php';
 
-    $result = new Burger;
+    $result = new Produk\Burger;
     $data = $result->readTwoTable();
 
 
 
 //check whether the button has been click or not
 if(isset($_POST['submit'])){
-    $add = new Burger;
+    $add = new Produk\Burger;
 
     $result =$add->addProduk($_POST);
     

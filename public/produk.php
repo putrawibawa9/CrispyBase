@@ -7,7 +7,7 @@ require_once "../admins/classCategory.php";
 
 $id_kategori = $_GET['id_kategori'];
 
-$bntng = new Burger;
+$bntng = new Produk\Burger;
 
 $produk = $bntng->readTwoTablepart3($id_kategori);
 

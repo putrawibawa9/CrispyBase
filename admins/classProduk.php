@@ -1,5 +1,9 @@
 <?php
-require_once "../construct.php";
+namespace Produk{
+    use Connection\Connect;
+    require_once "../construct.php";
+    
+
 class Burger extends Connect{
     
     public function readProduk(){
@@ -209,5 +213,6 @@ class Burger extends Connect{
     }
     }
 
+}
 }
 ?>

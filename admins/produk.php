@@ -3,7 +3,7 @@ require_once 'classProduk.php';
 require_once '../admin/header.php'; 
 
 
-$hasil = new Burger;
+$hasil = new Produk\Burger;
 $burger = $hasil->readProduk();
 ?>
 

@@ -1,5 +1,9 @@
 <?php
-require_once "../construct.php";
+
+namespace Category{
+    use Connection\Connect;
+    require_once "../construct.php";
+
 class Kategori extends Connect{
     
     public function readKategori(){
@@ -89,5 +93,6 @@ class Kategori extends Connect{
     }
     }
 
+}
 }
 ?>

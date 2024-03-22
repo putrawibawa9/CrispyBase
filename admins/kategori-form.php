@@ -4,14 +4,14 @@
 
 $id_kategori = $_GET['id_kategori'];
 
-$viewEachCategory = new Kategori;
+$viewEachCategory = new Category\Kategori;
 
 $kategori =$viewEachCategory->viewEachCategory($id_kategori);
 
 
 if(isset($_POST['submit'])){
     $nama_kategori = $_POST["nama_kategori"];
-   $editKategori = new Kategori;
+   $editKategori = new Category\Kategori;
    
    $editKategori->editKategori($nama_kategori,$id_kategori);
    

@@ -1,4 +1,11 @@
 <?php
+
+namespace Connection{
+    use PDO;
+    use PDOException;
+
+
+
 class Connect {
     protected $host = "localhost";
     protected $port = 3306;
@@ -22,6 +29,6 @@ class Connect {
     }
 } 
 
-
+}
 
 ?>

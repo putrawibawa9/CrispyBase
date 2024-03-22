@@ -3,7 +3,7 @@
 require_once "../admins/classCategory.php";
 
 
-$kat = new Kategori;
+$kat = new Category\Kategori;
 
 $kategori = $kat->readKategori();
 

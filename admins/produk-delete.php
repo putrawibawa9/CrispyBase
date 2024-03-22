@@ -2,7 +2,7 @@
 
 require_once 'classProduk.php';
 
-$burger = new Burger;
+$burger = new Produk\Burger;
 $id_produk = $_GET['id_produk'];
 
 if ($burger->deleteProduk($id_produk)){

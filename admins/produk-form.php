@@ -8,15 +8,15 @@
 $id_produk = $_GET['id_produk'];
 
 
-$data = new Burger;
-$semuakategori = new Kategori;
+$data = new Produk\Burger;
+$semuakategori = new Category\Kategori;
 
 $kategori = $semuakategori->readKategori();
 $result= $data->readTwoTablepart2($id_produk);
 
 if(isset($_POST['submit'])){
 
-    $edit = new Burger;
+    $edit = new Produk\Burger;
     $result = $edit->editProduk($_POST);
     
     //check the progress

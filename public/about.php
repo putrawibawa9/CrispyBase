@@ -4,7 +4,7 @@ include_once "header.php";
 include_once "../admins/classProduk.php";
 
 
-$result = new Burger;
+$result = new Produk\Burger;
 $binatang = $result->readProduk();
 
 
@@ -35,7 +35,7 @@ $binatang = $result->readProduk();
 
             <div class="row">
                 <div class="col-12 p-5">
-                    <h1 class="display-4"> Namanya kakak</h1>
+                    <h1 class="display-4"> Adien</h1>
                 
                     <p align="justify">This is my project for programmer certification</p>
                     <br>

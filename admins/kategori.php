@@ -3,7 +3,7 @@ require_once 'classCategory.php';
 require_once '../admin/header.php'; 
 
 
-$kategori = new Kategori;
+$kategori = new Category\Kategori;
 
 
 

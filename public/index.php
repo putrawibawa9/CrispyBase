@@ -3,7 +3,7 @@ include_once "header.php";
 
 require_once "../admins/classProduk.php";
 
-$burger = new Burger;
+$burger = new Produk\Burger;
 
 $binatang = $burger->readProduk();
 
