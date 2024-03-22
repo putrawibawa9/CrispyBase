@@ -1,36 +1,36 @@
 <?php 
     require_once '../admin/header.php';
-    require_once 'classBurger.php';
+    require_once 'classProduk.php';
     require_once 'classCategory.php';
 ?>
 
 <?php
-$id_binatang = $_GET['id_binatang'];
+$id_produk = $_GET['id_produk'];
 
 
 $data = new Burger;
 $semuakategori = new Kategori;
 
 $kategori = $semuakategori->readKategori();
-$result= $data->readTwoTablepart2($id_binatang);
+$result= $data->readTwoTablepart2($id_produk);
 
 if(isset($_POST['submit'])){
 
     $edit = new Burger;
-    $result = $edit->editBurger($_POST);
+    $result = $edit->editProduk($_POST);
     
     //check the progress
     if ($result){
         echo "
             <script>
             alert('data berhasil diubah');
-            document.location.href = 'burger.php';
+            document.location.href = 'produk.php';
             </script>
         ";
     }else{
         echo " <script>
         alert('data gagal diubah');
-        document.location.href = 'burger.php';
+        document.location.href = 'produk.php';
         </script>
     ";
 
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
 
         <form method="post" enctype="multipart/form-data">
 
-        <input type="hidden" name="id_binatang" value="<?= $id_binatang ?>;">
+        <input type="hidden" name="id_produk" value="<?= $id_produk ?>;">
         <input type="hidden" name="gambarLama" value="<?= $result['tableKat']['gambar']?>">
 
     <div class="mb-3">
@@ -62,13 +62,13 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label class="form-label"> Burger Name</label>
-                <input type="text" name="nama_binatang" class="form-control" value="<?= $result['tableBin']['nama_binatang']?>">
+                <input type="text" name="nama_produk" class="form-control" value="<?= $result['tableBin']['nama_produk']?>">
             </div>
             
             
             <div class="mb-3">
                 <label class="form-label"> Burger Descriptions</label>
-            <textarea class="form-control" name="keterangan_binatang" rows="3" placeholder="Keterangan Binatang"  required><?= $result['tableBin']['keterangan_binatang']?></textarea>
+            <textarea class="form-control" name="keterangan_produk" rows="3" placeholder="Keterangan Binatang"  required><?= $result['tableBin']['keterangan_produk']?></textarea>
             </div>
 
             <img src="../img/<?= $result['tableBin']['gambar'] ?>" width="100px" height="100px">
@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
                 <input type="file" name="gambar" class="form-control">
             </div>
 
-            <a href="burger.php" class="btn btn-success" >Back</a>
+            <a href="produk.php" class="btn btn-success" >Back</a>
             <button type="submit" class="btn btn-primary" name="submit" >Save</button>
         </form>
     </div>

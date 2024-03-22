@@ -1,11 +1,11 @@
 <?php
 include_once "header.php";
 
-include_once "../admins/classBurger.php";
+include_once "../admins/classProduk.php";
 
 
 $result = new Burger;
-$binatang = $result->readBurger();
+$binatang = $result->readProduk();
 
 
 ?>
@@ -35,9 +35,9 @@ $binatang = $result->readBurger();
 
             <div class="row">
                 <div class="col-12 p-5">
-                    <h1 class="display-4"> Naila Maulidya</h1>
+                    <h1 class="display-4"> Namanya kakak</h1>
                 
-                    <p align="justify">Hello, my name is Naila, and this is my project base final exam for Web Programming subject</p>
+                    <p align="justify">This is my project for programmer certification</p>
                     <br>
                  
                 </div>

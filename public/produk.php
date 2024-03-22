@@ -1,7 +1,7 @@
 <?php
 include_once "header.php";
 
-require_once "../admins/classBurger.php";
+require_once "../admins/classProduk.php";
 require_once "../admins/classCategory.php";
 
 
@@ -9,7 +9,7 @@ $id_kategori = $_GET['id_kategori'];
 
 $bntng = new Burger;
 
-$binatang = $bntng->readTwoTablepart3($id_kategori);
+$produk = $bntng->readTwoTablepart3($id_kategori);
 
 
 
@@ -43,16 +43,16 @@ $binatang = $bntng->readTwoTablepart3($id_kategori);
 
             <div class="row">
                 <div class="col-12 p-5">
-                <h1 class="display-4 mt-3 mb-5"> Category - <?= $binatang["tableKat"]["nama_kategori"]?></h1>
+                <h1 class="display-4 mt-3 mb-5"> Category - <?= $produk["tableKat"]["nama_kategori"]?></h1>
                 
                 <div class="row">
-                  <?php foreach($binatang["tableBin"] as $row):?>
+                  <?php foreach($produk["tableBin"] as $row):?>
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body text-center">
                                 <img src="../img/<?= $row['gambar']?>" alt="" class="img-fluid" > 
-                            <h5 class="m-0 text-center mt-2"> <?= $row['nama_binatang']?></h5>
-                            <button class="btn btn-primary btn-sm mt-2 detail" data-nama="<?= $row['nama_binatang']?>" data-keterangan="<?= $row['keterangan_binatang']?>" data-img="<?= $row['gambar']?>" data-kategori="<?=$row['nama_kategori']?>"> Detail</button>
+                            <h5 class="m-0 text-center mt-2"> <?= $row['nama_produk']?></h5>
+                            <button class="btn btn-primary btn-sm mt-2 detail" data-nama="<?= $row['nama_produk']?>" data-keterangan="<?= $row['keterangan_produk']?>" data-img="<?= $row['gambar']?>" data-kategori="<?=$row['nama_kategori']?>"> Detail</button>
                             </div>
                         </div>
                     </div>

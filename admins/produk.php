@@ -1,10 +1,10 @@
 <?php
-require_once 'classBurger.php'; 
+require_once 'classProduk.php'; 
 require_once '../admin/header.php'; 
 
 
 $hasil = new Burger;
-$burger = $hasil->readBurger();
+$burger = $hasil->readProduk();
 ?>
 
 
@@ -14,7 +14,7 @@ $burger = $hasil->readBurger();
       <div class="row">
         <div class="col-12 p-3 bg-white">
           <h3>Burger</h3>
-          <a href="burger-tambah.php" class="btn btn-primary  mb-3">Add</a>
+          <a href="produk-tambah.php" class="btn btn-primary  mb-3">Add</a>
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -30,14 +30,14 @@ $burger = $hasil->readBurger();
             <tbody>
               <?php foreach($burger as $row):?>
                 <tr>
-                  <td class="text-center" ><?=$row['id_binatang']?></td>
+                  <td class="text-center" ><?=$row['id_produk']?></td>
                   <td ><?=$row['nama_kategori']?></td>
-                  <td ><?=$row['nama_binatang']?></td>
-                  <td ><?=$row['keterangan_binatang']?></td>
+                  <td ><?=$row['nama_produk']?></td>
+                  <td ><?=$row['keterangan_produk']?></td>
                   <td class="text-center" > <img src="../img/<?=$row['gambar']?>" width="100px"></td>
                    <td>
-                    <a  href="burger-form.php?id_binatang=<?=$row['id_binatang'];?>" class="btn btn-warning btn-sm ">Edit</a>
-                    <a href="binatang-delete.php?id_binatang=<?=$row['id_binatang'];?>" class="btn btn-danger btn-sm " onclick="return confirm('yakin?');">Delete</a>
+                    <a  href="produk-form.php?id_produk=<?=$row['id_produk'];?>" class="btn btn-warning btn-sm ">Edit</a>
+                    <a href="produk-delete.php?id_produk=<?=$row['id_produk'];?>" class="btn btn-danger btn-sm " onclick="return confirm('yakin?');">Delete</a>
                    </td>
                   </tr>
                   <?php endforeach; ?>

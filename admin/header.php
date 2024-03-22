@@ -22,7 +22,7 @@
       <div class="navbar-nav">
         <a class="nav-link menu-home" aria-current="page" href="../admins/index.php">Home</a>
         <a class="nav-link menu-category" href="../admins/kategori.php">Category</a>
-        <a class="nav-link menu-binatang" href="../admins/burger.php">Burger</a>
+        <a class="nav-link menu-binatang" href="../admins/produk.php">Burger</a>
         <a class="nav-link" href="../admin/logout.php">logout</a>
       </div>
     </div>

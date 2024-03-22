@@ -43,7 +43,7 @@ $kategori = $kat->readKategori();
                             <ul class="dropdown-menu" aria-labelledby="binatang-dropdown">
 
                                 <?php foreach($kategori as $row):?>
-                                    <li><a class="dropdown-item" href="binatang.php?id_kategori=<?= $row['id_kategori']?>"> <?= $row['nama_kategori']?></a></li>
+                                    <li><a class="dropdown-item" href="produk.php?id_kategori=<?= $row['id_kategori']?>"> <?= $row['nama_kategori']?></a></li>
                                     <?php endforeach; ?>
                             
                             </ul>

@@ -1,6 +1,6 @@
 <?php 
     require_once '../admin/header.php';
-    require_once 'classBurger.php';
+    require_once 'classProduk.php';
 
     $result = new Burger;
     $data = $result->readTwoTable();
@@ -11,20 +11,20 @@
 if(isset($_POST['submit'])){
     $add = new Burger;
 
-    $result =$add->addBurger($_POST);
+    $result =$add->addProduk($_POST);
     
     //check the progress
     if ($result){
         echo "
             <script>
             alert('data berhasil ditambah');
-            document.location.href = 'burger.php';
+            document.location.href = 'produk.php';
             </script>
         ";
     }else{
         echo " <script>
         alert('data gagal ditambah');
-        document.location.href = 'burger.php';
+        document.location.href = 'produk.php';
         </script>
     ";
 
@@ -51,13 +51,13 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label class="form-label"> Burger Name</label>
-                <input type="text" name="nama_binatang" class="form-control">
+                <input type="text" name="nama_produk" class="form-control">
             </div>
 
 
             <label class="form-label"> Burger Descriptions</label>
             <div class="mb-3">
-            <textarea class="form-control" name="keterangan_binatang" rows="3"   required></textarea>
+            <textarea class="form-control" name="keterangan_produk" rows="3"   required></textarea>
             </div>
 
 

@@ -2,9 +2,9 @@
 require_once "../construct.php";
 class Burger extends Connect{
     
-    public function readBurger(){
+    public function readProduk(){
         $conn = $this->getConnection();
-        $query = "SELECT * FROM binatang JOIN kategori ON binatang.id_kategori = kategori.id_kategori";  
+        $query = "SELECT * FROM produk JOIN kategori ON produk.id_kategori = kategori.id_kategori";  
         $result = $conn->query($query);
         $burger = $result->fetchAll();
         return $burger;
@@ -15,7 +15,7 @@ class Burger extends Connect{
         $queryKat = "SELECT * FROM kategori";
         $resultKat = $conn->query($queryKat);
 
-        $queryBin = "SELECT * FROM binatang";
+        $queryBin = "SELECT * FROM produk";
         $resultBin = $conn->query($queryBin);
 
 
@@ -27,12 +27,12 @@ class Burger extends Connect{
             return false;
         }
     }
-    public function readTwoTablepart2($id_binatang){
+    public function readTwoTablepart2($id_produk){
         $conn = $this->getConnection();
-        $queryKat = "SELECT * FROM kategori JOIN binatang ON kategori.id_kategori = binatang.id_kategori WHERE id_binatang = $id_binatang";
+        $queryKat = "SELECT * FROM kategori JOIN produk ON kategori.id_kategori = produk.id_kategori WHERE id_produk = $id_produk";
         $resultKat = $conn->query($queryKat);
 
-        $queryBin = "SELECT * FROM binatang WHERE id_binatang= $id_binatang";
+        $queryBin = "SELECT * FROM produk WHERE id_produk= $id_produk";
         $resultBin = $conn->query($queryBin);
 
 
@@ -51,7 +51,7 @@ class Burger extends Connect{
         $queryKat = "SELECT nama_kategori FROM kategori WHERE id_kategori = $id_kategori";
         $resultKat = $conn->query($queryKat);
 
-        $queryBin = "SELECT * FROM binatang JOIN kategori ON binatang.id_kategori = kategori.id_kategori WHERE kategori.id_kategori = $id_kategori";
+        $queryBin = "SELECT * FROM produk JOIN kategori ON produk.id_kategori = kategori.id_kategori WHERE kategori.id_kategori = $id_kategori";
         $resultBin = $conn->query($queryBin);
 
         if($resultKat && $resultBin){
@@ -63,10 +63,10 @@ class Burger extends Connect{
     }
 }
 
-    public function addBurger($data){
+    public function addProduk($data){
         $conn = $this->getConnection();
-        $nama_binatang = $data['nama_binatang'];
-        $keterangan_binatang = $data['keterangan_binatang'];
+        $nama_produk = $data['nama_produk'];
+        $keterangan_produk = $data['keterangan_produk'];
         $id_kategori = $data['id_kategori'];
         $gambar = $this->uploadGambar();
         if (!$gambar) {
@@ -74,13 +74,13 @@ class Burger extends Connect{
         }
 
 
-        $query = "INSERT INTO binatang VALUES 
+        $query = "INSERT INTO produk VALUES 
         ('',?,?,?,?)";
     
         $stmt = $conn->prepare($query);
     
-        $stmt->bindParam(1,$nama_binatang);
-        $stmt->bindParam(2,$keterangan_binatang);
+        $stmt->bindParam(1,$nama_produk);
+        $stmt->bindParam(2,$keterangan_produk);
         $stmt->bindParam(3,$gambar);
         $stmt->bindParam(4,$id_kategori);
         $stmt->execute();
@@ -88,11 +88,11 @@ class Burger extends Connect{
     }
 
 
-    public function editBurger($data){
+    public function editProduk($data){
         $conn = $this->getConnection();
-        $nama_binatang = $data['nama_binatang'];
-        $keterangan_binatang = $data['keterangan_binatang'];
-        $id_binatang = $data['id_binatang'];
+        $nama_produk = $data['nama_produk'];
+        $keterangan_produk = $data['keterangan_produk'];
+        $id_produk = $data['id_produk'];
         $gambarLama = $data['gambarLama'];
         $id_kategori = $data['id_kategori'];
 
@@ -102,22 +102,24 @@ class Burger extends Connect{
         }else{
             $gambar = $this->uploadGambar();
         }
-        $query = "UPDATE binatang SET
-        nama_binatang = ?,
-        keterangan_binatang = ?,
+        $query = "UPDATE produk SET
+        nama_produk = ?,
+        keterangan_produk = ?,
         gambar = ?,
         id_kategori = ?
-        WHERE id_binatang = ?
+        WHERE id_produk = ?
         ";
              $stmt = $conn->prepare($query);
-                $stmt->bindParam(1,$nama_binatang);
-                $stmt->bindParam(2,$keterangan_binatang);
+                $stmt->bindParam(1,$nama_produk);
+                $stmt->bindParam(2,$keterangan_produk);
                 $stmt->bindParam(3,$gambar);
                 $stmt->bindParam(4,$id_kategori);
-                $stmt->bindParam(5,$id_binatang);
+                $stmt->bindParam(5,$id_produk);
                 $stmt->execute();
                 return true;
     }
+
+
     public function uploadGambar(){
         $namaFile = $_FILES['gambar']['name'];
         $ukuranFile =  $_FILES['gambar']['size'];
@@ -164,9 +166,9 @@ class Burger extends Connect{
     }
 
 
-    public function deleteBurger($id_binatang){
+    public function deleteProduk($id_produk){
         $conn = $this->getConnection();
-        $query = "DELETE FROM binatang WHERE id_binatang = $id_binatang";
+        $query = "DELETE FROM produk WHERE id_produk = $id_produk";
         $result = $conn->exec($query);
         return $result;
 }

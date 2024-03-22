@@ -1,11 +1,11 @@
  <?php
 include_once "header.php";
 
-require_once "../admins/classBurger.php";
+require_once "../admins/classProduk.php";
 
 $burger = new Burger;
 
-$binatang = $burger->readBurger();
+$binatang = $burger->readProduk();
 
 
 
