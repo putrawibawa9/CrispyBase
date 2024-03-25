@@ -72,6 +72,8 @@ class Burger extends Connect{
         $nama_produk = $data['nama_produk'];
         $keterangan_produk = $data['keterangan_produk'];
         $id_kategori = $data['id_kategori'];
+        $harga_produk = $data['harga_produk'];
+        $stok_produk = $data['stok_produk'];
         $gambar = $this->uploadGambar();
         if (!$gambar) {
             return false;
@@ -79,7 +81,7 @@ class Burger extends Connect{
 
 
         $query = "INSERT INTO produk VALUES 
-        ('',?,?,?,?)";
+        ('',?,?,?,?,?,?)";
     
         $stmt = $conn->prepare($query);
     
@@ -87,6 +89,8 @@ class Burger extends Connect{
         $stmt->bindParam(2,$keterangan_produk);
         $stmt->bindParam(3,$gambar);
         $stmt->bindParam(4,$id_kategori);
+        $stmt->bindParam(5,$harga_produk);
+        $stmt->bindParam(6,$stok_produk);
         $stmt->execute();
         return true;
     }
@@ -99,6 +103,8 @@ class Burger extends Connect{
         $id_produk = $data['id_produk'];
         $gambarLama = $data['gambarLama'];
         $id_kategori = $data['id_kategori'];
+        $harga_produk = $data['harga_produk'];
+        $stok_produk = $data['stok_produk'];
 
           //check whether user pick a new image or not
         if($_FILES['gambar']['error']===4){
@@ -110,7 +116,9 @@ class Burger extends Connect{
         nama_produk = ?,
         keterangan_produk = ?,
         gambar = ?,
-        id_kategori = ?
+        id_kategori = ?,
+        harga_produk = ?,
+        stok_produk = ?
         WHERE id_produk = ?
         ";
              $stmt = $conn->prepare($query);
@@ -118,7 +126,9 @@ class Burger extends Connect{
                 $stmt->bindParam(2,$keterangan_produk);
                 $stmt->bindParam(3,$gambar);
                 $stmt->bindParam(4,$id_kategori);
-                $stmt->bindParam(5,$id_produk);
+                $stmt->bindParam(5,$harga_produk);
+                $stmt->bindParam(6,$stok_produk);
+                $stmt->bindParam(7,$id_produk);
                 $stmt->execute();
                 return true;
     }

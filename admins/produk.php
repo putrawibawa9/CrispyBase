@@ -23,6 +23,8 @@ $burger = $hasil->readProduk();
                     <th class="text-center">Burger Name</th>
                     <th class="text-center">Descriptions</th>
                     <th class="text-center">Picture</th>
+                    <th class="text-center">Harga</th>
+                    <th class="text-center">Stok</th>
                     <th class="text-center">Options</th>
                     
                   </tr>
@@ -35,6 +37,8 @@ $burger = $hasil->readProduk();
                   <td ><?=$row['nama_produk']?></td>
                   <td ><?=$row['keterangan_produk']?></td>
                   <td class="text-center" > <img src="../img/<?=$row['gambar']?>" width="100px"></td>
+                  <td ><?=$row['harga_produk']?></td>
+                  <td ><?=$row['stok_produk']?></td>
                    <td>
                     <a  href="produk-form.php?id_produk=<?=$row['id_produk'];?>" class="btn btn-warning btn-sm ">Edit</a>
                     <a href="produk-delete.php?id_produk=<?=$row['id_produk'];?>" class="btn btn-danger btn-sm " onclick="return confirm('yakin?');">Delete</a>

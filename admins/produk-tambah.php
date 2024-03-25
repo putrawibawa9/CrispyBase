@@ -66,6 +66,16 @@ if(isset($_POST['submit'])){
                 <input type="file" name="gambar" class="form-control">
             </div>
 
+            <div class="mb-3">
+                <label class="form-label"> Harga Produk</label>
+                <input type="number" name="harga_produk" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> Stok Produk</label>
+                <input type="number" name="stok_produk" class="form-control">
+            </div>
+
             <a href="burger.php" class="btn btn-success" >Kembali</a>
             <button type="submit" class="btn btn-primary" name="submit" >Simpan</button>
         </form>

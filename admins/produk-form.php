@@ -78,6 +78,16 @@ if(isset($_POST['submit'])){
                 <input type="file" name="gambar" class="form-control">
             </div>
 
+            <div class="mb-3">
+                <label class="form-label"> Burger Price</label>
+                <input type="text" name="harga_produk" class="form-control" value="<?= $result['tableBin']['harga_produk']?>">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> Burger Stock</label>
+                <input type="text" name="stok_produk" class="form-control" value="<?= $result['tableBin']['stok_produk']?>">
+            </div>
+
             <a href="produk.php" class="btn btn-success" >Back</a>
             <button type="submit" class="btn btn-primary" name="submit" >Save</button>
         </form>

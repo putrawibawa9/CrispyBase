@@ -52,7 +52,8 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
                             <div class="card-body text-center">
                                 <img src="../img/<?= $row['gambar']?>" alt="" class="img-fluid" > 
                             <h5 class="m-0 text-center mt-2"> <?= $row['nama_produk']?></h5>
-                            <button class="btn btn-primary btn-sm mt-2 detail" data-nama="<?= $row['nama_produk']?>" data-keterangan="<?= $row['keterangan_produk']?>" data-img="<?= $row['gambar']?>" data-kategori="<?=$row['nama_kategori']?>"> Detail</button>
+                            <button class="btn btn-primary btn-sm mt-2 detail" data-nama="<?= $row['nama_produk']?>" data-keterangan="<?= $row['keterangan_produk']?>" data-img="<?= $row['gambar']?>" data-kategori="<?=$row['nama_kategori']?>"
+                            data-harga="<?=$row['harga_produk']?>"> Detail</button>
                             </div>
                         </div>
                     </div>
@@ -73,8 +74,7 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
       <div class="modal-body">
         <img id="modal-img" class="img-fluid">
         <h3 class="text-center mt-2" id="modal-nama"></h3>
-                <div class="text-center mt-2"> Category <span id="modal-kategori" ></span></div>
-
+                <div class="text-center mt-2"> Harga Rp. <span id="modal-harga" ></span></div>
                 <div class="text-center mt-2" id="modal-keterangan"></div>
       </div>
 
@@ -108,6 +108,7 @@ include_once "footer.php"
         $('#modal-img').attr('src','../img/' + $(this).data('img'));
         $('#modal-nama').html($(this).data('nama'));
         $('#modal-kategori').html($(this).data('kategori'));
+        $('#modal-harga').html($(this).data('harga'));
         $('#modal-keterangan').html('"<em>'+$(this).data('keterangan')+'</em>"');
         $('#modalDetail').modal('show');
     });

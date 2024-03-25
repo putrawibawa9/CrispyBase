@@ -46,7 +46,7 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
                 <?php endif; ?>
                          <form action="" method="post">
                             <div class="mb-3">
-                                <input type="text" name="username" placeholder="username" class="form-control">
+                                <input type="text" name="username" autofocus placeholder="username" class="form-control">
                             </div>
 
                             <div class="mb-3">
