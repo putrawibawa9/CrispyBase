@@ -11,9 +11,6 @@ $hasil = $kategori->readKategori();
 
 ?>
 
-
-    
-    
     
     <div class="container">
       <div class="row">
@@ -23,16 +20,17 @@ $hasil = $kategori->readKategori();
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th class="text-center">ID</th>
+                <th class="text-center">Number</th>
                     <th class="text-center">Kategori</th>
                     <th class="text-center">Action</th>
 
                   </tr>
             </thead>
             <tbody>
+            <?php $i=1?>
               <?php foreach($hasil as $row):?>
                 <tr>
-                  <td ><?=$row['id_kategori']?></td>
+                <td><?=$i++ ?></td>
                     <td ><?=$row['nama_kategori']?></td>
                    <td class="text-center">
                     <a  href="kategori-form.php?id_kategori=<?=$row['id_kategori'];?>" class="btn btn-warning btn-sm ">Edit</a>

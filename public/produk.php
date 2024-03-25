@@ -54,6 +54,7 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
                             <h5 class="m-0 text-center mt-2"> <?= $row['nama_produk']?></h5>
                             <button class="btn btn-primary btn-sm mt-2 detail" data-nama="<?= $row['nama_produk']?>" data-keterangan="<?= $row['keterangan_produk']?>" data-img="<?= $row['gambar']?>" data-kategori="<?=$row['nama_kategori']?>"
                             data-harga="<?=$row['harga_produk']?>"> Detail</button>
+                      <a href="buy.php?id_produk=<?=$row['id_produk']?>" class="btn btn-secondary btn-sm mt-2">Buy</a>
                             </div>
                         </div>
                     </div>
@@ -81,9 +82,6 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
       <div class="modal-footer">
         
       
-      <div>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Buy</button>
-      </div>
       <div>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>

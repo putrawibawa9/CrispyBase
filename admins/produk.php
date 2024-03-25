@@ -18,7 +18,7 @@ $burger = $hasil->readProduk();
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th class="text-center">ID</th>
+                <th class="text-center">Number</th>
                     <th class="text-center">Kategori</th>
                     <th class="text-center">Burger Name</th>
                     <th class="text-center">Descriptions</th>
@@ -30,9 +30,10 @@ $burger = $hasil->readProduk();
                   </tr>
             </thead>
             <tbody>
+              <?php $i=1?>
               <?php foreach($burger as $row):?>
                 <tr>
-                  <td class="text-center" ><?=$row['id_produk']?></td>
+                  <td><?=$i++ ?></td>
                   <td ><?=$row['nama_kategori']?></td>
                   <td ><?=$row['nama_produk']?></td>
                   <td ><?=$row['keterangan_produk']?></td>

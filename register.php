@@ -10,8 +10,10 @@ if(isset($_POST['register'])){
     $password = $_POST['password'];
     $register = new Auth;
     if ($register->register($username, $password)) {
-        header("Location: index.php");
-        exit();
+        echo "<script>
+        alert('New User added');
+        document.location.href = 'index.php';
+  </script>";
     } else {
         header("Location: register.php");
         exit();
@@ -39,17 +41,17 @@ if(isset($_POST['register'])){
             <div class="col-4">
                 <div class="card">
                     <div class="card-header text-center">
-                        Login User
+                        Register User
                     </div>
 
                     <div class="card-body">
                          <form action="" method="post">
                             <div class="mb-3">
-                                <input type="text" name="username" placeholder="username" class="form-control">
+                                <input required type="text" name="username" placeholder="username" class="form-control">
                             </div>
 
                             <div class="mb-3">
-                                <input type="password" name="password" placeholder="password" class="form-control">
+                                <input required type="password" name="password" placeholder="password" class="form-control">
                             </div> 
 
                                 <div class="d-grid gap-2">

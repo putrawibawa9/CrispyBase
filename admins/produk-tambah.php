@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     }else{
         echo " <script>
         alert('data gagal ditambah');
-        document.location.href = 'produk.php';
+        document.location.href = 'produk-tambah.php';
         </script>
     ";
 
@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label class="form-label"> Burger Name</label>
-                <input type="text" name="nama_produk" class="form-control">
+                <input type="text" name="nama_produk" class="form-control" required>
             </div>
 
 
@@ -63,20 +63,20 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label for="gambar" class="form-label">  Burger Picture</label>
-                <input type="file" name="gambar" class="form-control">
+                <input type="file" name="gambar" class="form-control" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label"> Harga Produk</label>
-                <input type="number" name="harga_produk" class="form-control">
+                <input type="number" name="harga_produk" class="form-control" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label"> Stok Produk</label>
-                <input type="number" name="stok_produk" class="form-control">
+                <input type="number" name="stok_produk" class="form-control" required>
             </div>
 
-            <a href="burger.php" class="btn btn-success" >Kembali</a>
+            <a href="produk.php" class="btn btn-success" >Kembali</a>
             <button type="submit" class="btn btn-primary" name="submit" >Simpan</button>
         </form>
     </div>

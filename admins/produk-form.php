@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     }else{
         echo " <script>
         alert('data gagal diubah');
-        document.location.href = 'produk.php';
+        document.location.href = 'produk-form.php';
         </script>
     ";
 
@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label class="form-label"> Burger Name</label>
-                <input type="text" name="nama_produk" class="form-control" value="<?= $result['tableBin']['nama_produk']?>">
+                <input required type="text" name="nama_produk" class="form-control" value="<?= $result['tableBin']['nama_produk']?>">
             </div>
             
             
@@ -75,17 +75,17 @@ if(isset($_POST['submit'])){
 
             <div class="mb-3">
                 <label for="gambar" class="form-label"> Burger Picture</label>
-                <input type="file" name="gambar" class="form-control">
+                <input type="file" name="gambar" class="form-control" required>
             </div>
 
             <div class="mb-3">
                 <label class="form-label"> Burger Price</label>
-                <input type="text" name="harga_produk" class="form-control" value="<?= $result['tableBin']['harga_produk']?>">
+                <input required type="number" name="harga_produk" class="form-control" value="<?= $result['tableBin']['harga_produk']?>">
             </div>
 
             <div class="mb-3">
                 <label class="form-label"> Burger Stock</label>
-                <input type="text" name="stok_produk" class="form-control" value="<?= $result['tableBin']['stok_produk']?>">
+                <input required type="number" name="stok_produk" class="form-control" value="<?= $result['tableBin']['stok_produk']?>">
             </div>
 
             <a href="produk.php" class="btn btn-success" >Back</a>

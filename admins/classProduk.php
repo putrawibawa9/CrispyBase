@@ -14,6 +14,13 @@ class Burger extends Connect{
         return $burger;
         }
 
+        function minStock( $id_produk ){
+        $conn = $this->getConnection();
+        $query    = "UPDATE produk SET stok_produk = stok_produk - 1 WHERE id_produk = '$id_produk'";
+        $result = $conn->exec($query);
+        return $result;
+    }
+
     public function readTwoTable(){
         $conn = $this->getConnection();
         $queryKat = "SELECT * FROM kategori";
