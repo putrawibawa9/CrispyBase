@@ -1,7 +1,7 @@
 <div class="row">
                     <div class="col-12">
                     <div class="footer bg-dark text-center text-light p-3">
-                            Copyright &copy;2024 Adien
+                            Copyright &copy;2024 Nyoman Ayu
                         </div>
                     </div>
                 </div>

@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
             
             <div class="mb-3">
                 <label class="form-label"> Burger Descriptions</label>
-            <textarea class="form-control" name="keterangan_produk" rows="3" placeholder="Keterangan Binatang"  required><?= $result['tableBin']['keterangan_produk']?></textarea>
+            <textarea class="form-control" name="keterangan_produk" rows="3" placeholder="Keterangan Burger"  required><?= $result['tableBin']['keterangan_produk']?></textarea>
             </div>
 
             <img src="../img/<?= $result['tableBin']['gambar'] ?>" width="100px" height="100px">

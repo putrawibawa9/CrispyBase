@@ -20,13 +20,13 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
         <div id="carouselExample" class="carousel slide carousel-fade h-100">
             <div class="carousel-inner h-100">
                 <div class="carousel-item h-100 active">
-                    <img src="../img/junk3.jpg" class="d-block w-100 h-70 object-fit-cover" alt="Gambar 1">
+                    <img src="../img/pizza1.jpg" class="d-block w-100 h-70 object-fit-cover" alt="Gambar 1">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="../img/junk2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
+                    <img src="../img/pizza2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="../img/junk1.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 3">
+                    <img src="../img/pizza3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 3">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -69,7 +69,7 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalDetailLabel">Burger Detail</h5>
+        <h5 class="modal-title" id="modalDetailLabel">Pizza Detail</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

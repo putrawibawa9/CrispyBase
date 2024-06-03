@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 <div class="container">
   <div class="row">
     <div class="col-12 p-3 bg-white">
-        <h3>Edit Kategori Kopi</h3>
+        <h3>Edit Kategori Pizza</h3>
         <form action="" method="post"`>  
         <input type="hidden" name="id_kategori" value="<?= $id_kategori ?>;">
                 

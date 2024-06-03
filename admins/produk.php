@@ -13,14 +13,14 @@ $burger = $hasil->readProduk();
     <div class="container">
       <div class="row">
         <div class="col-12 p-3 bg-white">
-          <h3>Burger</h3>
+          <h3>Pizza</h3>
           <a href="produk-tambah.php" class="btn btn-primary  mb-3">Add</a>
           <table class="table table-bordered">
             <thead>
               <tr>
                 <th class="text-center">Number</th>
                     <th class="text-center">Kategori</th>
-                    <th class="text-center">Burger Name</th>
+                    <th class="text-center">Pizza Name</th>
                     <th class="text-center">Descriptions</th>
                     <th class="text-center">Picture</th>
                     <th class="text-center">Harga</th>
