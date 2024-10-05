@@ -26,7 +26,7 @@ $kategori = $kat->readKategori();
             <div class="col-12">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="index.php">Crispy Base</a>
+                        <a class="navbar-brand" href="index.php">Explore Ogoh-Ogoh</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
@@ -38,7 +38,7 @@ $kategori = $kat->readKategori();
 
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle menu-binatang" href="#" id="binatang-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Category
+                                Lokasi
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="binatang-dropdown">
 
@@ -51,9 +51,7 @@ $kategori = $kat->readKategori();
 
                             </li>
 
-                            <li class="nav-item">
-                            <a class="nav-link menu-about" href="about.php">About</a>
-                            </li>
+            
                             <li class="nav-item dropdown">
                             </li>
                         </ul>

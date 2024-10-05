@@ -35,14 +35,14 @@ if(isset($_POST['submit'])){
 <div class="container">
   <div class="row">
     <div class="col-12 p-3 bg-white">
-        <h3>Add Burger</h3>
+        <h3>Tambah Ogoh-ogoh</h3>
 
 
         <form method="post" enctype="multipart/form-data">
-
+ <input type="hidden" name="stok_produk" value="1">
     <div class="mb-3">
         <select class="form-select" name="id_kategori" required>
-            <option value=""> --Choose Burger Category--</option>
+            <option value=""> --Pilih Wilayah--</option>
             <?php foreach ($data["tableKat"] as $jns) : ?>
                 <option value="<?= $jns['id_kategori'] ?>"><?= $jns['nama_kategori'] ?> </option>
             <?php endforeach; ?>
@@ -50,31 +50,27 @@ if(isset($_POST['submit'])){
     </div>
 
             <div class="mb-3">
-                <label class="form-label"> Burger Name</label>
+                <label class="form-label"> Nama Ogoh-ogoh</label>
                 <input type="text" name="nama_produk" class="form-control" required>
             </div>
 
 
-            <label class="form-label"> Burger Descriptions</label>
+            <label class="form-label">Deskripsi</label>
             <div class="mb-3">
             <textarea class="form-control" name="keterangan_produk" rows="3"   required></textarea>
             </div>
 
 
             <div class="mb-3">
-                <label for="gambar" class="form-label">  Burger Picture</label>
+                <label for="gambar" class="form-label">Gambar</label>
                 <input type="file" name="gambar" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label class="form-label"> Harga Produk</label>
-                <input type="number" name="harga_produk" class="form-control" required>
+                <label class="form-label">bahan</label>
+                <input type="text" name="harga_produk" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label"> Stok Produk</label>
-                <input type="number" name="stok_produk" class="form-control" required>
-            </div>
 
             <a href="produk.php" class="btn btn-success" >Kembali</a>
             <button type="submit" class="btn btn-primary" name="submit" >Simpan</button>

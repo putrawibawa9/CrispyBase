@@ -20,13 +20,10 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
         <div id="carouselExample" class="carousel slide carousel-fade h-100">
             <div class="carousel-inner h-100">
                 <div class="carousel-item h-100 active">
-                    <img src="../img/pizza1.jpg" class="d-block w-100 h-70 object-fit-cover" alt="Gambar 1">
+                    <img src="../img/ogoh1.jpg" class="d-block w-100 h-70 object-fit-cover" alt="Gambar 1">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="../img/pizza2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="../img/pizza3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 3">
+                    <img src="../img/ogoh2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -43,7 +40,7 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
 
             <div class="row">
                 <div class="col-12 p-5">
-                <h1 class="display-4 mt-3 mb-5"> Category - <?= $produk["tableKat"]["nama_kategori"]?></h1>
+                <h1 class="display-4 mt-3 mb-5"> Lokasi - <?= $produk["tableKat"]["nama_kategori"]?></h1>
                 
                 <div class="row">
                   <?php foreach($produk["tableBin"] as $row):?>
@@ -54,7 +51,6 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
                             <h5 class="m-0 text-center mt-2"> <?= $row['nama_produk']?></h5>
                             <button class="btn btn-primary btn-sm mt-2 detail" data-nama="<?= $row['nama_produk']?>" data-keterangan="<?= $row['keterangan_produk']?>" data-img="<?= $row['gambar']?>" data-kategori="<?=$row['nama_kategori']?>"
                             data-harga="<?=$row['harga_produk']?>"> Detail</button>
-                      <a href="buy.php?id_produk=<?=$row['id_produk']?>" class="btn btn-secondary btn-sm mt-2">Buy</a>
                             </div>
                         </div>
                     </div>
@@ -69,13 +65,13 @@ $produk = $bntng->readTwoTablepart3($id_kategori);
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalDetailLabel">Pizza Detail</h5>
+        <h5 class="modal-title" id="modalDetailLabel">Detail Ogoh-ogoh</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <img id="modal-img" class="img-fluid">
         <h3 class="text-center mt-2" id="modal-nama"></h3>
-                <div class="text-center mt-2"> Harga Rp. <span id="modal-harga" ></span></div>
+                <div class="text-center mt-2">Bahan : <span id="modal-harga" ></span></div>
                 <div class="text-center mt-2" id="modal-keterangan"></div>
       </div>
 

@@ -15,13 +15,10 @@ $binatang = $burger->readProduk();
         <div id="carouselExample" class="carousel slide carousel-fade h-100">
             <div class="carousel-inner h-100">
                 <div class="carousel-item h-100 active">
-                    <img src="../img/pizza1.jpg" class="d-block w-100 h-70 object-fit-cover" alt="Gambar 1">
+                    <img src="../img/ogoh1.jpg" class="d-block w-100 h-70 object-fit-cover" alt="Gambar 1">
                 </div>
                 <div class="carousel-item h-100">
-                    <img src="../img/pizza2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="../img/pizza3.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 3">
+                    <img src="../img/ogoh2.jpg" class="d-block w-100 h-100 object-fit-cover" alt="Gambar 2">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -37,8 +34,8 @@ $binatang = $burger->readProduk();
 
 
             <div class="col-12 p-5">
-                    <h1 class="display-4"> CRISPY BASE</h1>
-                    <p align="justify">Welcome to Crispy Base, where culinary excellence meets the art of crafting the perfect pizza experience. Our web platform is a digital gateway to a world of delectable creations, showcasing a symphony of flavors that will tantalize your taste buds. From classic favorites to innovative gourmet combinations, our menu is a celebration of premium ingredients and expert craftsmanship. Explore our diverse range of mouthwatering pizzas, each made with care and precision to ensure a gastronomic adventure with every bite. Our user-friendly website provides a seamless ordering experience, allowing you to customize your pizza to perfection and have it delivered straight to your door. Dive into a culinary journey where quality meets convenience, and savor the extraordinary at Crispy Base.</p>
+                    <h1 class="display-4">Explore Ogoh-ogoh</h1>
+                    <p align="justify">Website "Explore Ogoh-Ogoh Denpasar" dirancang untuk memperkenalkan dan melestarikan tradisi Ogoh-Ogoh di Bali, khususnya di Denpasar. Aplikasi ini menawarkan berbagai fitur yang mencakup informasi mendalam tentang sejarah dan budaya Ogoh-Ogoh, profil detail dari setiap Ogoh-Ogoh yang akan tampil dalam parade, serta peta interaktif yang menunjukkan lokasi-lokasi penting terkait acara ini. Selain itu, pengguna dapat mengakses jadwal kegiatan, berita terbaru, artikel edukatif, dan cerita di balik pembuatan Ogoh-Ogoh, lengkap dengan galeri foto dan video. Dengan demikian, aplikasi ini tidak hanya berfungsi sebagai panduan acara, tetapi juga sebagai sumber informasi budaya yang kaya dan mendalam.</p>
                 </div>
               
 <?php

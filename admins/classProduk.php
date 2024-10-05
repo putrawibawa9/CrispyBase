@@ -87,8 +87,8 @@ class Burger extends Connect{
         }
 
 
-        $query = "INSERT INTO produk VALUES 
-        ('',?,?,?,?,?,?)";
+        $query = "INSERT INTO produk (`id_produk`, `nama_produk`, `keterangan_produk`, `gambar`, `id_kategori`, `harga_produk`, `stok_produk`) VALUES 
+        (NULL,?,?,?,?,?,?)";
     
         $stmt = $conn->prepare($query);
     

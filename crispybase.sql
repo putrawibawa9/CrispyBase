@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 24, 2024 at 01:30 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Host: localhost:3306
+-- Generation Time: Jun 03, 2024 at 02:23 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `kategori` (
-  `id_kategori` int(11) NOT NULL,
-  `nama_kategori` varchar(50) NOT NULL
+  `id_kategori` int NOT NULL,
+  `nama_kategori` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -38,7 +38,8 @@ CREATE TABLE `kategori` (
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 (6, 'American Burger'),
-(12, 'Japanese Burger');
+(12, 'Japanese Burger'),
+(16, 'Burger Bali');
 
 -- --------------------------------------------------------
 
@@ -47,13 +48,13 @@ INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
 --
 
 CREATE TABLE `produk` (
-  `id_produk` int(11) NOT NULL,
-  `nama_produk` varchar(50) NOT NULL,
-  `keterangan_produk` text NOT NULL,
-  `gambar` varchar(100) NOT NULL,
-  `id_kategori` int(11) NOT NULL,
-  `harga_produk` varchar(50) DEFAULT NULL,
-  `stok_produk` int(11) DEFAULT NULL
+  `id_produk` int NOT NULL,
+  `nama_produk` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `keterangan_produk` text COLLATE utf8mb4_general_ci NOT NULL,
+  `gambar` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `id_kategori` int NOT NULL,
+  `harga_produk` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `stok_produk` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -61,9 +62,36 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `keterangan_produk`, `gambar`, `id_kategori`, `harga_produk`, `stok_produk`) VALUES
-(17, 'Balinesedream', 'Balineseis number 1', '6601846a71223.jpg', 16, '30', 116),
-(19, 'Teriyaki Burger:', 'A beef or chicken patty glazed with teriyaki sauce.', '664fd0edcdc3f.jpg', 12, '20000', 18),
-(20, 'Cheeseburger', 'A beef patty topped with one or more slices of cheese.', '664fd16e34552.jpg', 6, '30000', 98);
+(17, 'Balinesedream', 'Balineseis number 1', '6601846a71223.jpg', 16, '30', 117),
+(19, 'American Delight', 'dasda', '6601923c1ca90.jpeg', 12, '2', -2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sepatu`
+--
+
+CREATE TABLE `sepatu` (
+  `kode_sepatu` int NOT NULL,
+  `merk_sepatu` varchar(100) NOT NULL,
+  `warna_sepatu` varchar(100) NOT NULL,
+  `jenis_sepatu` varchar(100) NOT NULL,
+  `bahan_sepatu` varchar(100) NOT NULL,
+  `deskripsi_sepatu` varchar(100) NOT NULL,
+  `tanggal_launching_sepatu` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sepatu`
+--
+
+INSERT INTO `sepatu` (`kode_sepatu`, `merk_sepatu`, `warna_sepatu`, `jenis_sepatu`, `bahan_sepatu`, `deskripsi_sepatu`, `tanggal_launching_sepatu`) VALUES
+(1, 'Nike', 'Hitam', 'Sepatu Pria', 'Kain', 'Sepatu sneakers hitam dengan desain klasik.', '2023-05-15'),
+(2, 'Adidas', 'Putih', 'Sepatu Anak', 'Mesh', 'Sepatu lari putih dengan teknologi penyangga kaki.', '2023-07-20'),
+(3, 'New Balance', 'Biru', 'Sepatu Wanita', 'Kulit', 'Sepatu kasual biru dengan aksen merah.', '2023-09-10'),
+(4, 'Puma', 'Merah', 'Sepatu Anak', 'Sintetis', 'Sepatu futsal merah dengan sol anti-slip.', '2023-11-25'),
+(5, 'Vans', 'Kuning', 'Sepatu Pria', 'Kanvas', 'Sepatu slip-on kuning dengan motif kotak-kotak.', '2024-02-14'),
+(10, 'Ventella gasih', 'Putih', 'Sepatu Wanita', 'Parasut gasih', 'Pake ngampus gasih', '2001-09-12');
 
 -- --------------------------------------------------------
 
@@ -72,8 +100,8 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `keterangan_produk`, `gambar`,
 --
 
 CREATE TABLE `user2` (
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -82,7 +110,7 @@ CREATE TABLE `user2` (
 
 INSERT INTO `user2` (`username`, `password`) VALUES
 ('adien', '123'),
-('admin', 'admin'),
+('admin', '123'),
 ('arjana', '123'),
 ('putra', '123'),
 ('putrawibawa9', '123'),
@@ -105,6 +133,12 @@ ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
+-- Indexes for table `sepatu`
+--
+ALTER TABLE `sepatu`
+  ADD PRIMARY KEY (`kode_sepatu`);
+
+--
 -- Indexes for table `user2`
 --
 ALTER TABLE `user2`
@@ -118,13 +152,19 @@ ALTER TABLE `user2`
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_kategori` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_produk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `sepatu`
+--
+ALTER TABLE `sepatu`
+  MODIFY `kode_sepatu` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

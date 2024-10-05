@@ -17,8 +17,8 @@ class Kategori extends Connect{
 
     public function addKategori($nama_kategori){
         $conn = $this->getConnection();
-        $query = "INSERT INTO kategori VALUES 
-        ('',?)";
+        $query = "INSERT INTO kategori (`id_kategori`, `nama_kategori`) VALUES 
+        (NULL,?)";
     
         $stmt = $conn->prepare($query);
     

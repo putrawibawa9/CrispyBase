@@ -13,18 +13,17 @@ $burger = $hasil->readProduk();
     <div class="container">
       <div class="row">
         <div class="col-12 p-3 bg-white">
-          <h3>Pizza</h3>
+          <h3>Ogoh-ogoh</h3>
           <a href="produk-tambah.php" class="btn btn-primary  mb-3">Add</a>
           <table class="table table-bordered">
             <thead>
               <tr>
                 <th class="text-center">Number</th>
-                    <th class="text-center">Kategori</th>
-                    <th class="text-center">Pizza Name</th>
-                    <th class="text-center">Descriptions</th>
+                    <th class="text-center">Lokasi</th>
+                    <th class="text-center">Nama Ogoh-ogoh</th>
+                    <th class="text-center">Deskripsi</th>
                     <th class="text-center">Picture</th>
-                    <th class="text-center">Harga</th>
-                    <th class="text-center">Stok</th>
+                    <th class="text-center">Bahan</th>
                     <th class="text-center">Options</th>
                     
                   </tr>
@@ -39,7 +38,6 @@ $burger = $hasil->readProduk();
                   <td ><?=$row['keterangan_produk']?></td>
                   <td class="text-center" > <img src="../img/<?=$row['gambar']?>" width="100px"></td>
                   <td ><?=$row['harga_produk']?></td>
-                  <td ><?=$row['stok_produk']?></td>
                    <td>
                     <a  href="produk-form.php?id_produk=<?=$row['id_produk'];?>" class="btn btn-warning btn-sm ">Edit</a>
                     <a href="produk-delete.php?id_produk=<?=$row['id_produk'];?>" class="btn btn-danger btn-sm " onclick="return confirm('yakin?');">Delete</a>

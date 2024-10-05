@@ -15,13 +15,12 @@ $hasil = $kategori->readKategori();
     <div class="container">
       <div class="row">
         <div class="col-12 p-3 bg-white">
-          <h3>Category</h3>
-          <a href="kategori-tambah.php" class="btn btn-primary  mb-3">Add</a>
+          <a href="kategori-tambah.php" class="btn btn-primary  mb-3">Tambah Lokasi</a>
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th class="text-center">Number</th>
-                    <th class="text-center">Kategori</th>
+                <th class="text-center">Nomor</th>
+                    <th class="text-center">Lokasi</th>
                     <th class="text-center">Action</th>
 
                   </tr>

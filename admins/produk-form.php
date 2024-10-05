@@ -42,13 +42,15 @@ if(isset($_POST['submit'])){
 <div class="container">
   <div class="row">
     <div class="col-12 p-3 bg-white">
-        <h3>Edit Burger</h3>
+        <h3>Edit Ogoh-ogoh</h3>
 
 
         <form method="post" enctype="multipart/form-data">
 
-        <input type="hidden" name="id_produk" value="<?= $id_produk ?>;">
+        <input type="hidden" name="id_produk" value="<?= $id_produk ?>">
         <input type="hidden" name="gambarLama" value="<?= $result['tableKat']['gambar']?>">
+        <input type="hidden" name="stok_produk" value="1">
+    <div class="mb-3">
 
     <div class="mb-3">
         <select class="form-select" name="id_kategori" required>
@@ -61,31 +63,26 @@ if(isset($_POST['submit'])){
 
 
             <div class="mb-3">
-                <label class="form-label"> Burger Name</label>
+                <label class="form-label">Nama Ogoh-ogoh</label>
                 <input required type="text" name="nama_produk" class="form-control" value="<?= $result['tableBin']['nama_produk']?>">
             </div>
             
             
             <div class="mb-3">
-                <label class="form-label"> Burger Descriptions</label>
+                <label class="form-label">Deskripsi</label>
             <textarea class="form-control" name="keterangan_produk" rows="3" placeholder="Keterangan Burger"  required><?= $result['tableBin']['keterangan_produk']?></textarea>
             </div>
 
             <img src="../img/<?= $result['tableBin']['gambar'] ?>" width="100px" height="100px">
 
             <div class="mb-3">
-                <label for="gambar" class="form-label"> Burger Picture</label>
+                <label for="gambar" class="form-label">Gambar</label>
                 <input type="file" name="gambar" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label class="form-label"> Burger Price</label>
-                <input required type="number" name="harga_produk" class="form-control" value="<?= $result['tableBin']['harga_produk']?>">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label"> Burger Stock</label>
-                <input required type="number" name="stok_produk" class="form-control" value="<?= $result['tableBin']['stok_produk']?>">
+                <label class="form-label"> Bahan</label>
+                <input required type="text" name="harga_produk" class="form-control" value="<?= $result['tableBin']['harga_produk']?>">
             </div>
 
             <a href="produk.php" class="btn btn-success" >Back</a>
